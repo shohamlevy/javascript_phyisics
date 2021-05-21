@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gamedev Phaser Workshop - lesson 01: Initialize the framework</title>
+    <style>* { padding: 0; margin: 0; }</style>
+    <script src="node_modules/phaser-ce/build/phaser.min.js"></script>
+</head>
+<body>
+<script>
+    var game = new Phaser.Game(480, 320, Phaser.CANVAS, null, {
+      preload: preload, create: create, update: update
+    });
+    function preload() {
+        game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        game.scale.pageAlignHorizontally = true;
+        game.scale.pageAlignVertically = true;
+        game.stage.backgroundColor = '#eee';
+    }
+    function create() {}
+    function update() {}
+</script>
+</body>
+</html>
