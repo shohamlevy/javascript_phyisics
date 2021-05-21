@@ -1,0 +1,14 @@
+{
+    "name": "shohams-json-phys",
+    "version": "0.1.0",
+    "main": "index.html",
+    "author": "same",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shohamlevy/javascript_phyisics.git"
+    },
+    "devDependencies": {
+        "phaser-ce": "2.18.0"
+    }
+}

@@ -1,4 +1,4 @@
 tasks:
   - init: npm install
-    command: npm start
+    command: npm start && npm install phaser-ce@2.18.0
   - command: python3 -m http.server 8080
