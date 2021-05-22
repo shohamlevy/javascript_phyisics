@@ -1,4 +1,4 @@
 tasks:
   - init: npm install
     command: npm start && npm install
-  - command: python3 -m http.server 8080
+  - command: python3 -m http.server 8080 &
