@@ -9,6 +9,7 @@
         "url": "https://github.com/shohamlevy/javascript_phyisics.git"
     },
     "devDependencies": {
-        "phaser-ce": "2.18.0"
+        "phaser-ce": "2.18.0",
+        "phaser": "3.55.2"
     }
 }
