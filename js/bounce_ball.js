@@ -1,4 +1,4 @@
-var game = new Phaser.Game(480, 320, Phaser.CANVAS, null, {
+var game = new Phaser.Game(960, 640, Phaser.CANVAS, null, {
     preload: preload, create: create, update: update
 });
 
@@ -73,7 +73,7 @@ function create() {
 
     function createBall() {
         // ball = game.add.sprite(game.world.width * 0.5, game.world.height * 0.5, 'ball');
-        ball = game.add.sprite(50, 250, 'ball');
+        ball = game.add.sprite(100, 500, 'ball');
         ball.animations.add('wobble', [0, 1, 0, 2, 0, 1, 0, 2, 0], 12);
         ball.anchor.set(0.5);
         game.physics.enable(ball, Phaser.Physics.ARCADE);
@@ -86,15 +86,15 @@ function create() {
 
     function initBricks() {
         brickInfo = {
-            width: 50,
-            height: 20,
+            width: 100,
+            height: 40,
             count: {
                 col: 7,
                 row: 4
             },
             offset: {
-                top: 50,
-                left: 60
+                top: 100,
+                left: 120
             },
             padding: 10
         }
@@ -103,8 +103,8 @@ function create() {
 
         deltaX = brickInfo.width + brickInfo.padding;
         deltaY = brickInfo.height + brickInfo.padding;
-        for (let c = 0; c < brickInfo.count.col; c++) {
-            for (let r = 0; r < brickInfo.count.row; r++) {
+        for (var c = 0; c < brickInfo.count.col; c++) {
+            for (var r = 0; r < brickInfo.count.row; r++) {
                 var x = brickInfo.offset.left + c * deltaX;
                 var y = brickInfo.offset.top + r * deltaY;
                 newBrick = game.add.sprite(x, y, 'brick');
@@ -116,8 +116,8 @@ function create() {
         }
 
         bricks.children.forEach((br, indx) => {
-            game.add.tween(br.scale).to({x:2, y:2}, (indx+1)*50, Phaser.Easing.Elastic.Out, true, 100).onComplete.addOnce(function(){
-                game.add.tween(br.scale).to({x:1, y:1}, (indx+1)*50, Phaser.Easing.Elastic.In, true, 100);
+            game.add.tween(br.scale).to({x:2.5, y:2.5}, (indx+1)*50, Phaser.Easing.Elastic.Out, true, 100).onComplete.addOnce(function(){
+                game.add.tween(br.scale).to({x:2, y:2}, (indx+1)*50, Phaser.Easing.Elastic.In, true, 100);
             });
         });
     }
